@@ -1,0 +1,20 @@
+---
+title: "Plotly"
+author: "Wtg"
+date: "30 September 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Welcome to my first plot with plotly
+The plot below shows the mean chick weight for each diet at different times.  
+```{r plot, echo = FALSE, message=FALSE}
+library(plotly)
+cw2<-aggregate(weight~Time+Diet,data=ChickWeight,mean)
+plot_ly(cw2,x=~Time,y=~weight,type="scatter",color=~Diet)
+
+```
+
