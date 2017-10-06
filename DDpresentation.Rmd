@@ -1,0 +1,50 @@
+---
+title: "Developing Data Products -Course Project"
+author: "Wtg"
+date: "3 October 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ggplot2)
+library(car)
+```
+
+## Objective
+
+This course project for the Developing Data Products module aims to: 
+
+1. create an interactive data application in Shiny 
+
+2. Create a pitch presentation for the Shiny application 
+
+3. Deploy the application and host slides on Rstudio
+
+
+## Data source: Prestige example dataset
+The Prestige dataset from the car library provides information on average attributes of occupations from the Census of Canada (1971). We aim to investigate any linear relationship between education and income through a linear regression. 
+
+
+The application allows users to: 
+
+- examine any relationship between education and salary
+
+- select model for display
+
+- visualise predictions of average income for different occupations according to education
+
+##Preliminary analysis 
+```{r head, echo=TRUE }
+head(Prestige)
+```
+Variables in our dataset are displayed above. 
+
+##Exploratory plots 
+The plot below suggests possible linear relationship between education and income. Hence we will create a shiny application to investigate this via linear regression.
+```{r plot, echo = FALSE,width=3,height=3}
+ggplot(Prestige,aes(education,income))+geom_point()
+```
+
+ 
+
